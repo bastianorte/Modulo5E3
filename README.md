@@ -1,4 +1,4 @@
-# Modulo 5 Ejercicio 2
+# Modulo 5 Ejercicio 3
 
 ## 📖 Descripción
 En este proyecto, los estudiantes deberán aplicar medidas de seguridad avanzadas en la web
@@ -77,13 +77,13 @@ el acceso a áreas específicas de la aplicación.
 Clona este repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/bastianorte/Modulo5E2.git
+git clone https://github.com/bastianorte/Modulo5E3.git
 ```
 
 Navega hasta el directorio del proyecto:
 
 ```bash
-cd Modulo5E2
+cd Modulo5E3
 ```
 
 Instala las dependencias:
