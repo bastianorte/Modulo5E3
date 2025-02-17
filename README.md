@@ -1,11 +1,11 @@
 # Modulo 5 Ejercicio 3
 
 ## 📖 Descripción
-En este proyecto, los estudiantes deberán aplicar medidas de seguridad avanzadas en la web
-del hospital desarrollada en ReactJS. Integrarán protección contra ataques comunes,
-asegurarán las rutas de la aplicación y protegerán el consumo de APIs utilizando API Key y
-JWT. Además, se implementará seguridad por roles y autenticación de usuarios para restringir
-el acceso a áreas específicas de la aplicación.
+En este proyecto, los estudiantes deberán implementar Hooks para la gestión de estado y
+efectos secundarios, además de manejar errores y excepciones dentro del sistema del hospital.
+A lo largo del proyecto, integrarán el Hook de estado y el Hook de efecto para interactuar con
+los datos del hospital. También se les pedirá que creen un Hook personalizado y apliquen
+estrategias para la detección y manejo de errores dentro de la aplicación React.
 
 ## :no_entry: Accesos de Usuario
 

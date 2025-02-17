@@ -33,13 +33,16 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setLoading(false);
   }, []);
 
+  // Función para loguear al usuario
   const login = (role: string) => {
     const userData: User = { role };
     setUser(userData);
     const encryptedUser = encryptData(userData);
     localStorage.setItem("user", encryptedUser);
   };
+  
 
+    // Función para desloguear al usuario
   const logout = () => {
     setUser(null);
     localStorage.removeItem("user");
@@ -54,7 +57,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   return (
     <AuthContext.Provider value={value}>
-      {!loading ? children : <p>Cargando...</p>}
+    {!loading ? children : <p>Cargando...</p>}
     </AuthContext.Provider>
   );
 };

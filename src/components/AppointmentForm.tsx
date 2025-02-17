@@ -5,21 +5,26 @@ interface Doctor {
   id: string;
   nombre: string;
 }
-interface AppointmentFormProps {
-  setPacientes:(key: string, value: string | number) => void;
-  doctores:Doctor[];
-}
-
 interface Paciente {
   nombre: string;
   doctor: string;
   fecha: string;
   hora: string;
 }
+interface AppointmentFormProps {
+  setPacientes: (pacientes: Paciente[]) => void;
+  doctores: Doctor[];
+}
+
 
 const AppointmentForm: React.FC<AppointmentFormProps> = ({setPacientes,doctores}) => {
 
-  const [paciente, setPaciente] = useState<Paciente>({ nombre: "", doctor: "", fecha: "", hora: "" }); 
+  const [paciente, setPaciente] = useState<Paciente>({
+    nombre: "",
+    doctor: "",
+    fecha: "",
+    hora: "",
+  });
 
 
     // Referencias para manejar el enfoque
@@ -32,16 +37,10 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({setPacientes,doctores}
   // Función que maneja el envío del formulario
   const manejarEnvio = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setPacientes((pacientes) => [...pacientes, paciente]);
-    setPaciente({ nombre: "", doctor: "", fecha: "", hora: "" });
+    setPacientes((pacientes) => [...pacientes, paciente]); // Esto agrega el nuevo paciente al arreglo
+    setPaciente({ nombre: "", doctor: "", fecha: "", hora: "" }); // Restablecer el formulario
   };
 
-  // Función para enfocar el siguiente campo
-  const enfocarCampo = (campoRef: React.RefObject<HTMLInputElement | HTMLSelectElement>) => {
-    if (campoRef.current) {
-      campoRef.current.focus();
-    }
-  }; 
 
   useEffect(() => {
     // Enfocar el campo de nombre al cambiar de vista

@@ -6,7 +6,6 @@ import Contacto from './pages/Contacto';
 import Footer from './components/Footer';
 import { AuthProvider } from './context/AuthContext';
 import Login from './pages/Login';
-import ProtectedRoute from './components/ProtectedRoute';
 
 
 
@@ -21,9 +20,7 @@ return (
             <Inicio />
           } />
         <Route path="/Equipo" element={
-          <ProtectedRoute allowedRoles={["admin", "user"]}>
             <Equipo />
-          </ProtectedRoute>
           } />
         <Route path="/Contacto" element={
               <Contacto />

@@ -4,6 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import Header from "../components/Header";
 import MainLayout from "../layouts/MainLayout";
 import DOMPurify from 'dompurify';
+import { FormEvent } from 'react';
 
 
 
@@ -13,7 +14,7 @@ const Login = () => {
   const { login, user } = useAuth();
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const sanitizedComment = DOMPurify.sanitize(username);
@@ -44,6 +45,7 @@ const Login = () => {
 ) : (
   <h3>No has ingresado</h3>
 )}
+            {!user ? (
       <form onSubmit={handleLogin} className="mx-auto container">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 w-80 mx-auto">
           <div className="sm:col-span-2">
@@ -77,6 +79,7 @@ const Login = () => {
           </div>
         </div> 
       </form>
+            ) : ( "" ) }
     </MainLayout>
   );
 };
